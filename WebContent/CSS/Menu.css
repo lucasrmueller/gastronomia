@@ -1,0 +1,222 @@
+/* MENU HORIZONTAL */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+#cssmenu {    
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+    font-size: 10px;
+    line-height: 15px;
+    text-transform: uppercase;
+    text-align: left;    
+}
+#cssmenu > ul {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+    font-size: 12px;
+    width: auto;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: honeydew;
+    border: 1px solid lightblue;
+    border-bottom: 3px solid lightblue;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+}
+
+#cssmenu > ul li {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+
+#cssmenu > ul li.has-sub {
+    position: relative;
+}
+#cssmenu > ul li.has-sub:hover ul {
+    display: block;
+}
+
+#cssmenu > ul li.has-sub ul li {
+    display: block;
+}
+#cssmenu > ul li.has-sub > a {    
+    background-repeat: no-repeat;
+    background-position: 90% -95%;
+}
+#cssmenu > ul li.has-sub > a.botao-receitas,
+#cssmenu > ul li.has-sub > a:hover {
+    background: lightblue no-repeat;
+    background-position: 90% 195%;
+}
+#cssmenu > ul li a {
+    display: block;
+    padding: 12px 24px 11px 24px;
+    text-decoration: none;
+    color: #747474;
+    text-shadow: 0px 1px 0px #fff;
+}
+#cssmenu > ul li a.botao-receitas,
+#cssmenu > ul li a:hover {
+    background: lightblue;    
+}
+@media (max-width: 600px) {
+    #cssmenu > ul {
+        width: 100%;
+    }
+    
+    #cssmenu > ul li {
+        display: none;
+    }
+    #cssmenu > ul li.right {
+        float: none;
+    }
+    #cssmenu > ul li.has-sub {
+        position: relative;
+    }
+    
+    #cssmenu > ul li.has-sub ul li {
+        display: block;
+    }
+ 
+    #cssmenu > ul li.has-sub > a {
+        background-image: none;
+    }
+}
+/* Make sure they show even if hidden in mobile view by JS */
+@media (min-width: 600px) {
+    #cssmenu > ul > li.collapsed {
+        display: inline-block !important;
+        *display: inline;
+        zoom: 1;
+    }
+    #cssmenu > ul ul li.collapsed {
+        display: block !important;
+    }
+}
+
+.user{
+    position: absolute;
+    right :1%;
+}
+.botao-sair{
+    position: absolute;    
+    display: none; 
+    background-color: honeydew; 
+    
+    width: auto;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: honeydew;
+    border: 1px solid lightblue;
+    border-bottom: 3px solid lightblue;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    z-index: 2;
+}
+.user:hover .botao-sair{
+    display: block;
+}
+
+/* Botao Receitas */
+.botao-receitas:hover .busca-submenu {
+    display: block;
+}
+.botao-receitas {
+    position: relative;
+}
+.busca-submenu{
+    position: absolute;    
+    display: none; 
+    background-color: honeydew; 
+    
+    width: 143px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: honeydew;
+    border: 1px solid lightblue;
+    border-bottom: 3px solid lightblue;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    z-index: 2;
+}
+
+/* BOTAO Estoque */
+.botao-estoque {
+    position: relative;
+}
+
+.ingredientes-em-estoque {
+    position: absolute;    
+    display: none; 
+    background-color: honeydew; 
+    
+    width: 127px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: honeydew;
+    border: 1px solid lightblue;
+    border-bottom: 3px solid lightblue;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    z-index: 2;
+}
+.botao-estoque:hover .ingredientes-em-estoque{
+    display: block;
+}
+
+/* BOTAO Aula */
+.botao-aula {
+    position: relative;
+}
+
+.aula {
+    position: absolute;    
+    display: none; 
+    background-color: honeydew; 
+    
+    width: 143px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: honeydew;
+    border: 1px solid lightblue;
+    border-bottom: 3px solid lightblue;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    z-index: 2;
+}
+
+.botao-aula:hover .aula{
+    display: block;
+}
+
+/* Imprimir */
+#imprimir{  
+    height: 15px;    
+}
+.print{
+    position: absolute;
+    max-height: 42px;
+}
+
+/* Titulo */
+h1{
+    position: absolute;
+    font-family: "Open Sans", sans-serif;
+    top:6%;
+    left:50%;
+    transform: translate(-50%,0%);
+}

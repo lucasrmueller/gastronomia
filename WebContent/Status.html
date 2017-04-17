@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ingredientes Cadastrados</title>
+        <link rel="stylesheet" type="text/css" href="CSS/Menu.css">
+        <link rel="stylesheet" type="text/css" href="CSS/Status.css"> 
+    </head>
+    
+    <body>
+        
+        <!--BARRA MENU-->
+        <div class="container">
+            <div class='row' id='cssmenu'>
+                <ul class="col-lg-12 list-inline">
+                    <li class='botao-status'><a href='Status.html'><span>Status</span></a></li>
+                    
+                    <li class='botao-receitas'><a href='#'><span>Receitas</span></a>
+                        <ul class="busca-submenu">
+                            <li><a href='Buscar%20Receitas.html'><span>Buscar Receita</span></a></li>
+                            <li><a href='Adicionar%20Receita.html'><span>Nova Receita</span></a></li> 
+                        </ul>
+                    </li>   
+                    
+                    <li class='botao-estoque'><a href='#'><span>Estoque</span></a>
+                        <ul class="ingredientes-em-estoque">
+                            <li><a href='Ingredientes%20em%20Estoque.html'><span>Ver Estoque</span></a></li>
+                            <li><a href='Ingredientes%20Perdidos.html'><span>Perdas</span></a></li>
+                            <li><a href='Estoque%20Minimo.html'><span>Definir Estoque Minimo</span></a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class='botao-ingredientes'><a href='Ingredientes%20Cadastrados.html'><span>Ingredientes</span></a></li>
+                    
+                    <li class='botao-aula'><a href='#'><span>Aula</span></a>
+                        <ul class="aula">
+                            <li><a href='Planejar%20Aulas.html'><span>Planejar Aulas</span></a></li>
+                            <li><a href='Aulas%20Dadas.html'><span>Aulas Concluidas</span></a></li> 
+                        </ul></li>
+                    
+                    <li class='user'><a href='#'><span>Camila</span></a>                       
+                        <ul class="botao-sair">
+                            <li><a href='#'><span>Sair</span></a></li> 
+                        </ul>
+                    </li>                    
+                         
+                </ul>
+            </div>
+        </div>
+
+
+        <!--TABELA-->  
+
+            <div class="container">
+            <h1>Status</h1>
+            
+                <table class="status-estoque">                
+                    <tr>                    
+                        <td><a href="Ingredientes%20em%20Estoque.html">Estoque suficiente</a></td>
+                    </tr>                
+                </table>
+            
+                <!--<table class="status-estoque-baixo">
+                    <tr>
+                        <td><a href="Compras%20para%20Estoque.html">Estoque abaixo do minimo!</td>
+                        </a>
+                    </tr>
+                </table>-->
+            
+                <!--<table class="status-aulas">                
+                    <tr>                    
+                        <td><a href="Aula Ingredientes.html">Ingredientes suficientes para as aulas cadastradas</a></td>
+                    </tr>                
+                </table>-->
+
+                <table class="status-aulas-baixo">                
+                    <tr>                    
+                        <td><a href="Aula%20Ingredientes.html">Falta Ingredientes para as aulas cadastradas</a></td>
+                    </tr>                
+                </table>
+            
+            
+        </div>    
+    </body>
+</html>

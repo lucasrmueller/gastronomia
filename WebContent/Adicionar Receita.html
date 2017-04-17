@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Nova Receita</title>
+        <link rel="stylesheet" type="text/css" href="CSS/Menu.css">
+        <link rel="stylesheet" type="text/css" href="CSS/Adicionar%20Receita.css"> 
+    </head>
+    
+    <body>
+        
+        <!--BARRA MENU-->
+        <div class="container">
+            <div class='row' id='cssmenu'>
+                <ul class="col-lg-12 list-inline">
+                    <li class='botao-status'><a href='Status.html'><span>Status</span></a></li>
+                    
+                    <li class='botao-receitas'><a href='#'><span>Receitas</span></a>
+                        <ul class="busca-submenu">
+                            <li><a href='Buscar%20Receitas.html'><span>Buscar Receita</span></a></li>
+                            <li><a href='Adicionar%20Receita.html'><span>Nova Receita</span></a></li> 
+                        </ul>
+                    </li>   
+                    
+                    <li class='botao-estoque'><a href='#'><span>Estoque</span></a>
+                        <ul class="ingredientes-em-estoque">
+                            <li><a href='Ingredientes%20em%20Estoque.html'><span>Ver Estoque</span></a></li>
+                            <li><a href='Ingredientes%20Perdidos.html'><span>Perdas</span></a></li>
+                            <li><a href='Estoque%20Minimo.html'><span>Definir Estoque Minimo</span></a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class='botao-ingredientes'><a href='Ingredientes%20Cadastrados.html'><span>Ingredientes</span></a></li>
+                    
+                    <li class='botao-aula'><a href='#'><span>Aula</span></a>
+                        <ul class="aula">
+                            <li><a href='Planejar%20Aulas.html'><span>Planejar Aulas</span></a></li>
+                            <li><a href='Aulas%20Dadas.html'><span>Aulas Concluidas</span></a></li> 
+                        </ul></li>
+                    
+                    <li class='user'><a href='#'><span>Camila</span></a>                       
+                        <ul class="botao-sair">
+                            <li><a href='#'><span>Sair</span></a></li> 
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!--FORMULARIO-->
+        <h1>Nova Receita</h1>
+        
+        <div class="formularios">
+            <div class="formularios-1row">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome da Receita</th>
+                            <th>Setor</th>
+                            <th>Classificação</th>
+                        </tr>
+                    </thead>
+            
+                    <tr>
+                        <td><input placeholder="Receita" type="text"</td>
+                        <td><input placeholder="Setor" type="text"</td>
+                        <td><input placeholder="Classificação" type="text"</td>
+                    </tr>
+                </table>
+            </div>
+            
+        <!--INGREDIENTES-->
+                <table id="novoIngrediente">
+                    <thead>       
+                        <tr>
+                            <th>Ingredientes</th>
+                            <th>Quantidade Bruta</th>
+                            <th>Unidade</th>
+                            <th>
+                                <img src="Imagens/add.png" class="adicionar" onclick="addRow('novoIngrediente')">
+                            </th>
+                        </tr>                    
+                    </thead>
+            					
+						<tr>
+							<td><select>
+                        <option value="default">Ingredientes</option>
+                        <option value="add-novo-ingrediente" id="select-adicionar-novo-ingrediente">Adicionar Novo Ingrediente</option>
+                        <option>------------------</option>
+                        <option>Abacate comum</option>
+                        <option>Abacaxi</option>
+                        <option>Abobora</option>
+                        <option>Abobora Menina</option>
+                        <option>Abobora Moranga</option>
+                        <option>Abrico</option>
+                        <option>Açafrão em pó</option>
+                        <option>Acelga (folha e talos)</option>
+                        <option>Açucar Mascavo</option>
+                        <option>Açucar Refinado</option>
+                        <option>Agrião</option>
+                        <option>Aguardente</option>
+                        <option>Agulha cru</option>
+                        <option>Agulhão de Vela cru</option>
+                        <option>Aipim / Mandioca</option>
+                        <option>Alcachofra - coração</option>
+                        <option>Alcachofra - inteira</option>
+                        <option>Alcaparra</option>
+                        <option>Alface</option>
+                        <option>Alface Romana</option>
+                        <option>Alfafa</option>
+                        <option>Alfavaca em pó</option>
+                        <option>Alho</option>
+                        <option>Almecega</option>
+                        <option>Almeirão</option>
+                        <option>Amaranto</option>
+                        <option>Ameixa Amarela</option>
+                        <option>Ameixa Branca</option>
+                        <option>Ameixa Passa</option>
+                        <option>Ameixa Preta</option>
+                        <option>Ameixa Vermelha</option>
+                        <option>Amendoa</option>
+                        <option>Amendoim Amarelo cru</option>
+                        <option>Amido de Milho</option>
+                        <option>Amora media</option>
+                        <option>Araruta (farinha)</option>
+                        <option>Arenque em filé cru</option>
+                        <option>Arraia / Raia cru</option>
+                        <option>Arroz Agulha brunido</option>
+                        <option>Arroz Agulha integral</option>
+                        <option>Arroz Selvagem</option>
+                        <option>Aspargo cru</option>
+                        <option>Atum cru</option>
+                        <option>Aveia (grao) cru</option>
+                        <option>Aveia (floco) cru</option>
+                        <option>Avelã</option>
+                        <option>Azedinha</option>
+                        <option>Azeite de Dende</option>
+                        <option>Azeitona madura conserva</option>
+                        <option>Azeitona nacional preta</option>
+                        <option>Bacalhau cru</option>
+                        <option>Bacon com pouca gordura</option>
+                        <option>Bacuri</option>
+                        <option>Badejo cru</option>
+                        <option>Bagre cru</option>
+                        <option>Banana da Terra cru</option>
+                        <option>Banana Maçã</option>
+                        <option>Banana Prata cru</option>
+                        <option>Banha de Porco industrializada</option>
+                        <option>Batata Aipo Amarela cru</option>
+                        <option>Batata Boroa / Mandoquinha</option>
+                        <option>Batata Doce Amarela cru</option>
+                        <option>Batata Doce Branca cru</option>
+                        <option>Batata Inglesa cru</option>
+                        <option>Beiju</option>
+                        <option>Berinjela cru</option>
+                        <option>Beterraba cru</option>
+                        <option>Biscoito de Polvilho</option>
+                        <option>Bolacha Agua e Sal</option>
+                        <option>Bonito cru</option>
+                        <option>Brocolis (flor) cru</option>
+                        <option>Buruti polpa</option>
+                        <option>Cacau em pó</option>
+                        <option>Cação cru</option>
+                        <option>Café em pó</option>
+                        <option>Caju</option>
+                        <option>Caju suco</option>
+                        <option>Caldo de Carne</option>
+                        <option>Caldo de Galinha</option>
+                        <option>Camarão cru</option>
+                        <option>camarão Seco descascado do Norte</option>
+                        <option>Canela em casca</option>
+                        <option>Canjica (milho)</option>
+                        <option>Cara</option>
+                        <option>Cara (inhame)</option>
+                        <option>Caranguejo fresco</option>
+                        <option>Carne de boi - Bisteca de Lombo</option>
+                        <option>Carne de boi - Costela cru com gordura</option>
+                        <option>Carne de boi - Filé cru</option>
+                        <option>Carne Seca / Charque</option>
+                        <option>Carne de Carneiro magra</option>
+                        <option>Carne de Carneiro - Costeleta cru</option>
+                        <option>Carne de Coelho</option>
+                        <option>Carne de Cordeiro - Costeleta cru</option>
+                        <option>Carne de Cordeiro - Peito</option>
+                        <option>Carne de Cordeiro - Pernil cru</option>
+                        <option>Carne de Faisão</option>
+                        <option>Carne de Frango cru</option>
+                        <option>Carne de Galinha cru magro</option>
+                        <option>Carne de Jacaré</option>
+                        <option>Carne de Lagarto</option>
+                        <option>Carne de Ovelha - Lombo cru</option>
+                        <option>Carne de Pato</option>
+                        <option>Carne de Perdiz cru</option>
+                        <option>Carne de Pombo cru</option>
+                        <option>Carne de Rã</option>
+                        <option>Carne de Tatu</option>
+                        <option>Carne de Veado</option>
+                        <option>Carne de Vitela magro cru</option>
+                        <option>Carne de Vitela (média em gordura) cru</option>
+                        <option>Caviar Americano</option>
+                        <option>Cebola cru</option>
+                        <option>Cenoura Amarela cru</option>
+                        <option>Cereja</option>
+                        <option>Chicoria</option>
+                        <option>Chocolate em pó</option>
+                        <option>Chuchu Verde</option>
+                        <option>Coalhada</option>
+                        <option>Coco da Baia (leite) industrializado</option>
+                        <option>Coentro</option>
+                        <option>Cogumelo fresco média</option>
+                        <option>Colorau</option>
+                        <option>Cominho</option>
+                        <option>Congro Rosa</option>
+                        <option>Conhaque</option>
+                        <option>Consome caldo</option>
+                        <option>Coração de Boi cru</option>
+                        <option>Coração de Galinha</option>
+                        <option>Couve de Bruxelas</option>
+                        <option>Creme de Leite Nestle</option>
+                        <option>Creme Chantily caseiro</option>
+                        <option>Creme de Nata</option>
+                        <option>Damasco fresco</option>
+                        <option>Damasco dessecado</option>
+                        <option>Damasco em conserva</option>
+                        <option>Damasco Geleia</option>
+                        <option>Dende - amendoa</option>
+                        <option>Dende - polpa</option>
+                        <option>Dende - oleo</option>
+                        <option>Dextrose - anidra</option>
+                        <option>Dextrose - Cristalizada</option>
+                        <option>Dente de Leão</option>
+                        <option>Doce a base de Ovo</option>
+                        <option>Doce de Abacaxi</option>
+                        <option>Doce de batata Doce caseiro</option>
+                        <option>Doce de batata Doce industrializado</option>
+                        <option>Doce de Biuruti</option>
+                        <option>Doce de Feijão industrializado</option>
+                        <option>Doce de Frutas (calda) caseiro</option>
+                        <option>Doce de Frutas industrializado</option>
+                        <option>Doce de Frutas (cristalizadas) industrializado</option>
+                        <option>Doce de Frutas (cristalizadas) caseiro</option>
+                        <option>Doce de Goiaba</option>
+                        <option>Doce de Legumes</option>
+                        <option>Doce de Leite</option>
+                        <option>Doce de Limão</option>
+                        <option>Doce de Manga</option>
+                        <option>Doce de Murici</option>
+                        <option>Doce de Pessego</option>
+                        <option>Dourado</option>
+                        <option>Eledon em pó</option>
+                        <option>Eledon reconstituido</option>
+                        <option>Enchova cru</option>
+                        <option>Enchova cozida</option>
+                        <option>Enchova em salmoura</option>
+                        <option>Enchova pasta</option>
+                        <option>Enchovinha cru</option>
+                        <option>Enguia</option>
+                        <option>Erva Doce</option>
+                        <option>Ervilha com vagem cru</option>
+                        <option>Ervilha (conserva) sem vagem</option>
+                        <option>Escarola</option>
+                        <option>Espaguete comum cru</option>
+                        <option>Espinafre cru</option>
+                        <option>Fanta</option>
+                        <option>Farinha de Milho Branco</option>
+                        <option>Farinha de Tapioca</option>
+                        <option>Farinha de Trigo 50% extração</option>
+                        <option>Fecula de Banana</option>
+                        <option>Feijão Adzuki</option>
+                        <option>Feijão Branco graudo cru</option>
+                        <option>Feijão Cavalo</option>
+                        <option>Feijão Fradinho</option>
+                        <option>Feijão Preto chato</option>
+                        <option>Feijão Vermelho</option>
+                        <option>Feijao Verde</option>
+                        <option>Figado de Boi cru</option>
+                        <option>Figo Verde</option>
+                        <option>Framboesa</option>
+                        <option>Garoupa Tome cru</option>
+                        <option>Gelatina simples (folhas)</option>
+                        <option>Gengibre Rizona</option>
+                        <option>Girassol (oleo)</option>
+                        <option>Goiaba Branca</option>
+                        <option>Goiabada</option>
+                        <option>Grão de Bico dessecado cru</option>
+                        <option>Gravola</option>
+                        <option>Haddock cru</option>
+                        <option>Haddock defumado</option>
+                        <option>Hortelã (folhas)</option>
+                        <option>Inhame (raiz sem casca)</option>
+                        <option>Iogurte</option>
+                        <option>Jabuticaba</option>
+                        <option>Jaca (polpa)</option>
+                        <option>Jambu</option>
+                        <option>Jilo</option>
+                        <option>Karo (etiqueta azul)</option>
+                        <option>Ketchup</option>
+                        <option>Lagosta cru</option>
+                        <option>Laranja Pera</option>
+                        <option>Leite de Bufala</option>
+                        <option>Leite de Vaca Desnatado</option>
+                        <option>Leite de Vaca Integral cru</option>
+                        <option>Lentilha seca cru</option>
+                        <option>Lima da Persia</option>
+                        <option>Lima Verde</option>
+                        <option>Lingua de Boi cru</option>
+                        <option>Linguado cru</option>
+                        <option>Linguiça de Porco fina cru</option>
+                        <option>Maçã Branca cru</option>
+                        <option>Maionese</option>
+                        <option>Maisena</option>
+                        <option>Mamão maduro</option>
+                        <option>Manga</option>
+                        <option>Manteiga com sal</option>
+                        <option>Maracuja comum (polpa)</option>
+                        <option>Margarina</option>
+                        <option>Margarina Vegetal</option>
+                        <option>Marisco Carne</option>
+                        <option>Marshmellow</option>
+                        <option>Massa para Pastel</option>
+                        <option>Mel de Abelhas</option>
+                        <option>Melado de Cana</option>
+                        <option>Melancia</option>
+                        <option>Melão</option>
+                        <option>Merluza cru</option>
+                        <option>Mexilhão</option>
+                        <option>Milho Amarelo cru</option>
+                        <option>Milho Verde (conserva enlatado)</option>
+                        <option>Morango</option>
+                        <option>Mortadela</option>
+                        <option>Mostarda Amarela condimento</option>
+                        <option>Mozarela</option>
+                        <option>Nabo cru (bulbo)</option>
+                        <option>Namorado cru</option>
+                        <option>Nectarina</option>
+                        <option>Nespera</option>
+                        <option>Nescau</option>
+                        <option>Nessucar</option>
+                        <option>Nestogeno em pó (1º semestre)</option>
+                        <option>Nestogeno reeconstituido (1º semestre)</option>
+                        <option>Nestogeno em pó (2ºsemestre)</option>
+                        <option>Nestogeno reconstituido (2º semestre)</option>
+                        <option>Nhoque</option>
+                        <option>Nidex em pó</option>
+                        <option>Niquim cru</option>
+                        <option>Nopal Tenro</option>
+                        <option>Noz de Cola</option>
+                        <option>Nozes</option>
+                        <option>Oleo de ilho refiando</option>
+                        <option>Oleo de Oliva</option>
+                        <option>Oleo de Soja</option>
+                        <option>Ovo de Codorna</option>
+                        <option>Ovo de Galinha (inteiro) cru</option>
+                        <option>Paio</option>
+                        <option>Palmito cru</option>
+                        <option>Palmito em conserva</option>
+                        <option>Pao de Leite</option>
+                        <option>Dourado</option>
+                        <option>Enchova cru</option>
+                        <option>Garoupa Verdadeira cru</option>
+                        <option>Manjuba cru</option>
+                        <option>Merluza cru</option>
+                        <option>Pargo</option>
+                        <option>Pescada</option>
+                        <option>Robalo cru</option>
+                        <option>Salmao Americano cru</option>
+                        <option>Salmao Europeu cru</option>
+                        <option>Sardinha cru</option>
+                        <option>Tainha inteiro cru</option>
+                        <option>Truta cru</option>
+                        <option>Pepino com casca cru</option>
+                        <option>Pepino em salmoura</option>
+                        <option>Pera cru</option>
+                        <option>Pimenta do Reino</option>
+                        <option>Pimenta Verde</option>
+                        <option>Pimentão maduro cru</option>
+                        <option>Pimentão cru</option>
+                        <option>Pinhão cru</option>
+                        <option>Pipoca em grão</option>
+                        <option>Polvo fresco</option>
+                        <option>Presuntada</option>
+                        <option>Presunto (cru ou fresco)</option>
+                        <option>Queijo Brie nacional</option>
+                        <option>Queijo Camembert frances</option>
+                        <option>Queijo Cheddar americano</option>
+                        <option>Queijo de Minas</option>
+                        <option>Queijo de Minas Frescal</option>
+                        <option>Queijo Edam</option>
+                        <option>Queijo Emantal suiço</option>
+                        <option>Queijo Gorgonzola nacional</option>
+                        <option>Queijo Gruyere nacional</option>
+                        <option>Queijo Parmesão argentino</option>
+                        <option>Queijo Prato</option>
+                        <option>Queijo Provolone nacional</option>
+                        <option>Queijo Roquefort nacional</option>
+                        <option>Queijo Tipo Ricota nacional</option>
+                        <option>Quinoa grão</option>
+                        <option>Repolho cru</option>
+                        <option>Requeijão Catupiry</option>
+                        <option>Ricota</option>
+                        <option>Robalo cru</option>
+                        <option>Roma</option>
+                        <option>Sagu</option>
+                        <option>Salame</option>
+                        <option>Salsicha comum</option>
+                        <option>Soja (leite em pó)</option>
+                        <option>Soja (molho)</option>
+                        <option>Sorvete de Creme</option>
+                        <option>Tamara ao natural</option>
+                        <option>Tangerina</option>
+                        <option>Tapioca</option>
+                        <option>Tomate maduro</option>
+                        <option>Tomate (suco fresco)</option>
+                        <option>Tomate (extrato)</option>
+                        <option>Tomate (molho)</option>
+                        <option>Torresmo</option>
+                        <option>Uva Branca nacional (polpa)</option>
+                        <option>Uva (suco)</option>
+                        <option>Vagem comum cru</option>
+                        <option>Vinho media</option>
+                        <option>Waffles</option>
+                        <option>Whisky</option>
+                        <option>Xarope de Milho</option>
+                    </select></td>
+                            
+							<td><input placeholder="Quantidade Bruta"></td>
+                            <td>
+                                <select>
+                                    <option>kg</option>
+                                    <option>g</option>
+                                    <option>l</option>
+                                    <option>ml</option>
+                                </select></td>
+                            
+							<td><input class="botoes" type="image" src="Imagens/delete.png" value="deletar"></td>
+						</tr>
+						
+				</table>
+		</div>
+        
+        
+        <!--BOTAO BUSCAR IMAGEM-->
+                <div class="buscar-imagem">
+                    <input id="Imagem" name="Imagem" class="input-file" type="file">
+                </div>
+            
+            <!-- BOTAO SALVAR CANCELAR -->
+            <div class="salvar-cancelar">
+                <button id="cancelar">Limpar</button>
+                <button id="salvar">Salvar</button>
+            </div>
+        
+        <script src="Javascript/Adicionar%20Receita.js"></script>
+        
+    </body>
+</html>

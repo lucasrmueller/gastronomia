@@ -1,0 +1,46 @@
+/* Status Estoque */
+.status-estoque{
+    background-color: honeydew;
+}
+.status-estoque-baixo{
+    background-color: moccasin;
+}
+.status-estoque-baixo, .status-estoque{
+    position: absolute;
+    font-family: "Note Sans", sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Status Aulas */
+.status-aulas{
+    background-color: honeydew;
+}
+.status-aulas-baixo{
+    background-color: moccasin;
+}
+
+.status-aulas-baixo, .status-aulas{
+    position: absolute;
+    font-family: "Note Sans", sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+tr, td, th {
+    font-family:"Noto Sans", Sans-Serif;
+    font-size: 16px;
+    border: 1px solid slategrey;
+    text-align: center;
+    padding: 4px;
+}
+
+th{
+    background-color: lavender;
+}

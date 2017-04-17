@@ -1,0 +1,65 @@
+/* TABELA */
+
+.novoIngrediente{
+    position: fixed;
+}
+tr, td, th {
+    font-family:"Noto Sans", Sans-Serif;
+    font-size: 16px;
+    border: 1px solid slategrey;
+    text-align: center;
+    padding: 4px;
+}
+
+th{
+    background-color: lavender;
+}
+
+.botoes {
+    height: 22px;    
+}
+
+.adicionar{
+    height:20px;
+}
+
+.ver-ingredientes{
+    position: absolute;
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+tr:hover td[rowspan]{
+    background-color: lavender;
+}
+
+table{
+    width: 600px;
+    padding-top: 30px;
+}
+
+/* Botao Salvar-Cancelar */
+.salvar-cancelar{
+    position: absolute;
+    top: 110%;
+    right: 0%;
+}
+
+#salvar{
+    background-color: lightblue;
+}
+
+/* Botao Buscar Imagem */
+.buscar-imagem{
+    position: absolute;
+    top: 110%;
+}
+.formularios{
+    font-family: "Noto Sans", sans-serif;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+

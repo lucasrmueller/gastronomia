@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Busca de Receitas</title>
+        <link rel="stylesheet" type="text/css" href="CSS/Menu.css">
+        <link rel="stylesheet" type="text/css" href="CSS/Receita%20Detalhes.css"> 
+    </head>
+    
+    <body>
+        
+        <!--BARRA MENU-->
+        <div class="container">
+            <div class='row' id='cssmenu'>
+                <ul class="col-lg-12 list-inline">
+                    <li class='botao-status'><a href='Status.html'><span>Status</span></a></li>
+                    
+                    <li class='botao-receitas'><a href='#'><span>Receitas</span></a>
+                        <ul class="busca-submenu">
+                            <li><a href='Buscar%20Receitas.html'><span>Buscar Receita</span></a></li>
+                            <li><a href='Adicionar%20Receita.html'><span>Nova Receita</span></a></li> 
+                        </ul>
+                    </li>   
+                    
+                    <li class='botao-estoque'><a href='#'><span>Estoque</span></a>
+                        <ul class="ingredientes-em-estoque">
+                            <li><a href='Ingredientes%20em%20Estoque.html'><span>Ver Estoque</span></a></li>
+                            <li><a href='Ingredientes%20Perdidos.html'><span>Perdas</span></a></li>
+                            <li><a href='Estoque%20Minimo.html'><span>Definir Estoque Minimo</span></a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class='botao-ingredientes'><a href='Ingredientes%20Cadastrados.html'><span>Ingredientes</span></a></li>
+                    
+                    <li class='botao-aula'><a href='#'><span>Aula</span></a>
+                        <ul class="aula">
+                            <li><a href='Planejar%20Aulas.html'><span>Planejar Aulas</span></a></li>
+                            <li><a href='Aulas%20Dadas.html'><span>Aulas Concluidas</span></a></li> 
+                        </ul></li>
+                    
+                    <li class='user'><a href='#'><span>Camila</span></a>                       
+                        <ul class="botao-sair">
+                            <li><a href='#'><span>Sair</span></a></li> 
+                        </ul>
+                    </li>                
+                    
+                    <!--Imprimir-->
+                    <li class="print">
+                        <a href="#"><img src="Imagens/printer.png" alt="impressora" id="imprimir"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!--Multiplicador-->	
+		<input type="text" placeholder="Multiplicador" id="multiplicador">       
+        
+        <!--TABELA-->
+        
+		<div>
+			<h1 class="text-center">Abacaxi com coco</h1>
+
+			<img class="comida" src="Imagens/abacaxi%20coco.jpg" alt="prato" height="220px">
+         		<table class="ingredientes">
+					<tr bgcolor="lightgrey">
+						<th>Ingredientes</th>
+						<th class="numeric">Qtd. Bruta Ent.</th>
+						<th class="numeric">Custo Bruto Unitario</th>
+						<th class="numeric">Qtd. Liquida</th>
+						<th class="numeric">Custo Total</th>
+					</tr>
+					<tr>
+						<td data-title="Company">Abacaxi</td>
+						<td data-title="Qtd. Bruta Ent." class="numeric">1 kg</td>
+						<td data-title="Custo Bruto Unitario" class="numeric">R$ 4,99</td>
+						<td data-title="Qtd. Liquida" class="numeric">0,06 kg</td>				
+						<td data-title="Custo Total" class="numeric">R$ 0,30</td>
+					</tr>
+					<tr>
+						<td data-title="Company">Arroz</td>
+						<td data-title="Qtd. Bruta Ent." class="numeric">5 kg</td>
+						<td data-title="Custo Bruto Unitario" class="numeric">R$ 29,50</td>
+						<td data-title="Qtd. Liquida" class="numeric">0,06 kg</td>				<td data-title="Custo Total" class="numeric">R$ 1,77</td>
+					</tr>
+					<tr>
+						<td data-title="Company">Coco</td>
+						<td data-title="Qtd. Bruta Ent." class="numeric">1 kg</td>
+						<td data-title="Custo Bruto Unitario" class="numeric">R$ 25,00</td>
+						<td data-title="Qtd. Liquida" class="numeric">0,01 kg</td>
+						<td data-title="Custo Total" class="numeric">R$ 0,25</td>
+					</tr>
+					<tr>
+						<td data-title="Company">Leite Condensado</td>
+						<td data-title="Qtd. Bruta Ent." class="numeric">2,5 kg</td>
+						<td data-title="Custo Bruto Unitario" class="numeric">R$ 51,00</td>
+						<td data-title="Qtd. Liquida" class="numeric">0,03 kg</td>
+						<td data-title="Custo Total" class="numeric">R$ 1,53</td>
+					</tr>
+         		</table>
+    
+			<table class="precos">
+    			<tr>
+    				<th>Preço de custo por porçao</th>
+    				<td>R$ 3,85</td>
+    			</tr>
+				<tr>
+    				<th>Preço de custo por receita</th>
+    				<td>R$ 3,85</td>
+    			</tr>
+			</table>
+
+			<table class="tamanho-receita">
+				<tr>
+					<th>Tamanho da receita em Litros</th>
+					<td>0,15</td>
+				</tr>
+			</table>
+
+			<table class="calorias">
+				<tr>
+    				<th>Calorias na receita</th>
+    				<td>238,8</td>
+				</tr>
+			</table>
+		</div>
+
+	
+	
+	</body>
+</html>

@@ -1,0 +1,56 @@
+/* TABELA */
+
+tr, td, th {
+    font-family:"Noto Sans", Sans-Serif;
+    font-size: 16px;
+    border: 1px solid slategrey;
+    text-align: center;
+    padding: 4px;
+}
+
+th{
+    background-color: lavender;
+}
+.table {
+    position: absolute;
+    font-family:  "Noto Sans", sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    top: 19%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+.botoes {
+    height: 22px;    
+}
+
+.adicionar{
+    height:20px;
+}
+
+.multiplicador{
+    border: solid 1px grey;
+    height: 13px;
+}
+
+.ver-ingredientes{
+    position: absolute;
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+tr:hover td[rowspan]{
+    background-color: lavender;
+}
+.salvar-cancelar{
+    position: absolute;
+    top: 30%;
+    right: 10%;
+}
+#salvar{
+    background-color: lightblue;
+}
+tr:hover{
+    background-color: lavender;
+}

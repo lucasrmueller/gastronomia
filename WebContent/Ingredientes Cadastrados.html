@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ingredientes Cadastrados</title>
+        <link rel="stylesheet" type="text/css" href="CSS/Menu.css">
+        <link rel="stylesheet" type="text/css" href="CSS/Ingredientes%20Cadastrados.css"> 
+    </head>
+    
+    <body>
+        
+        <!--BARRA MENU-->
+        <div class="container">
+            <div class='row' id='cssmenu'>
+                <ul class="col-lg-12 list-inline">
+                    <li class='botao-status'><a href='Status.html'><span>Status</span></a></li>
+                    
+                    <li class='botao-receitas'><a href='#'><span>Receitas</span></a>
+                        <ul class="busca-submenu">
+                            <li><a href='Buscar%20Receitas.html'><span>Buscar Receita</span></a></li>
+                            <li><a href='Adicionar%20Receita.html'><span>Nova Receita</span></a></li> 
+                        </ul>
+                    </li>   
+                    
+                    <li class='botao-estoque'><a href='#'><span>Estoque</span></a>
+                        <ul class="ingredientes-em-estoque">
+                            <li><a href='Ingredientes%20em%20Estoque.html'><span>Ver Estoque</span></a></li>
+                            <li><a href='Ingredientes%20Perdidos.html'><span>Perdas</span></a></li>
+                            <li><a href='Estoque%20Minimo.html'><span>Definir Estoque Minimo</span></a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class='botao-ingredientes'><a href='Ingredientes%20Cadastrados.html'><span>Ingredientes</span></a></li>
+                    
+                    <li class='botao-aula'><a href='#'><span>Aula</span></a>
+                        <ul class="aula">
+                            <li><a href='Planejar%20Aulas.html'><span>Planejar Aulas</span></a></li>
+                            <li><a href='Aulas%20Dadas.html'><span>Aulas Concluidas</span></a></li> 
+                        </ul></li>
+                    
+                    <li class='user'><a href='#'><span>Camila</span></a>                       
+                        <ul class="botao-sair">
+                            <li><a href='#'><span>Sair</span></a></li> 
+                        </ul>
+                    </li>                    
+                    
+                    <li>
+                        <input class="busca" type="text" placeholder="Buscar Ingredientes">          
+                        </input>
+                    </li>       
+                </ul>
+            </div>
+        </div>
+
+        <!--TABELA-->
+        <div class="container">
+            <h1>Ingredientes Cadastrados</h1>
+            <table class="table table-striped custab">
+                <thead>
+                    <!--Botao Buscar Ingredientes-->              
+                        <tr>
+                            <th>#</th>
+                            <th>Ingredientes</th>
+                            <th>Calorias em 100g</th>
+                            <th>Aproveitamento em %</th>
+                            <th>Unidade</th>
+                            <th>
+                                <a href="#"><img src="Imagens/add.png" class="adicionar" alt="adicionar receita"></a>
+                            </th>
+                        </tr>                    
+                </thead>
+                
+                <tr>
+                    <td>1</td>
+                    <td>Abacaxi</td>
+                    <td>52</td>
+                    <td>87</td>
+                    <td>kg</td>
+                    <td><input class="botoes" type="image" src="Imagens/edit.png" value="editar">
+                     <input class="botoes" type="image" src="Imagens/delete.png" value="deletar"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Arroz</td>
+                    <td>345,7</td>
+                    <td>100</td>
+                    <td>kg</td>
+                    <td><input class="botoes" type="image" src="Imagens/edit.png" value="editar">
+                    <input class="botoes" type="image" src="Imagens/delete.png" value="deletar"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Coco</td>
+                    <td>240</td>
+                    <td>70</td>
+                    <td>kg</td>
+                    <td><input class="botoes" type="image" src="Imagens/edit.png" value="editar">
+                    <input class="botoes" type="image" src="Imagens/delete.png" value="deletar"></td>
+                </tr>
+            </table>
+            
+            
+            
+        </div>    
+    </body>
+</html>
