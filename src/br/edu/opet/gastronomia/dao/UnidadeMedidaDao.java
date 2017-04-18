@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import br.edu.opet.gastronomia.jdbc.Conexao;
 import br.edu.opet.gastronomia.model.UnidadeMedida;
 import br.edu.opet.gastronomia.util.ExceptionUtil;
@@ -46,7 +45,7 @@ public class UnidadeMedidaDao {
            // Copiando o objeto para o retorno
            tObjeto = pUnidadeMedida;
 
-           // Recuperando o cÃ³digo gerado pelo banco de dados
+           // Recuperando o código gerado pelo banco de dados
            ResultSet tRsChave = tComandoJDBC.getGeneratedKeys();
            tRsChave.next();
            tObjeto.setId(tRsChave.getInt(1));
@@ -153,7 +152,7 @@ public class UnidadeMedidaDao {
             tComandoJDBC.setString(i++, pUnidadeMedida.getDescricao());
             tComandoJDBC.setInt(i++, pUnidadeMedida.getId());
 
-            // Executando o comando de regravação e salvando o nÃºmero de registros alterados
+            // Executando o comando de regravação e salvando o número de registros alterados
             int tQtdeReg = tComandoJDBC.executeUpdate();
 
             // Verificando se um registro foi alterado
@@ -166,7 +165,7 @@ public class UnidadeMedidaDao {
             tComandoJDBC.close();
         }
         catch (SQLException tExcept) {
-            ExceptionUtil.mostrarErro(tExcept, "Erro no Método de atualizaï¿½ï¿½o do objeto");
+            ExceptionUtil.mostrarErro(tExcept, "Erro no Método de atualização do objeto");
         }
 
         // Retornando o objeto
@@ -192,15 +191,15 @@ public class UnidadeMedidaDao {
 
             // Verificando se um registro foi removido
             if (tQtdeReg == 1) {
-                // Indicado que a remoï¿½ï¿½o foi efetuado com sucesso
+                // Indicado que a remoção foi efetuado com sucesso
                 return true;
             }
         }
         catch (SQLException tExcept) {
-            ExceptionUtil.mostrarErro(tExcept, "Erro no Método de remoï¿½ï¿½o do objeto");
+            ExceptionUtil.mostrarErro(tExcept, "Erro no Método de remoção do objeto");
         }
 
-        // Se chegou nesse ponto a remoï¿½ï¿½o nÃ£o foi efetuada
+        // Se chegou nesse ponto a remoção não foi efetuada
         return false;
     }
 
@@ -232,7 +231,7 @@ public class UnidadeMedidaDao {
             tComandoJDBC.close();
         }
         catch (SQLException tExcept) {
-            ExceptionUtil.mostrarErro(tExcept, "Erro no Método de recuperaï¿½ï¿½o da lista de objetos");
+            ExceptionUtil.mostrarErro(tExcept, "Erro no Método de recuperação da lista de objetos");
         }
 
         // Retornando a lista de objetos

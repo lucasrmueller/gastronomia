@@ -35,7 +35,7 @@ public class Produto implements Comparable<Produto> {
 
     public void setId(int pId) {
         if (pId <= 0)
-            throw new IllegalArgumentException("Id do produto invalido");
+            throw new IllegalArgumentException("Id do produto inv·lido");
         id = pId;
     }
 
@@ -45,7 +45,7 @@ public class Produto implements Comparable<Produto> {
 
     public void setNome(String pNome) {
         if (pNome == null || pNome.isEmpty() || pNome.length() > 100)
-            throw new IllegalArgumentException("Simbolo do produto invalido");
+            throw new IllegalArgumentException("Simbolo do produto inv·lido");
         nome = pNome;
     }
 
@@ -55,7 +55,7 @@ public class Produto implements Comparable<Produto> {
 
     public void setQuantidadeCalorica(BigDecimal pQuantidadeCalorica) {
         if (pQuantidadeCalorica.compareTo(BigDecimal.ZERO) <= 0)
-            throw new IllegalArgumentException("Quantidade calorica do produto invalido");
+            throw new IllegalArgumentException("Quantidade calorica do produto inv·lido");
         quantidadeCalorica = pQuantidadeCalorica;
     }
 
@@ -65,7 +65,7 @@ public class Produto implements Comparable<Produto> {
 
     public void setAproveitamento(int pAproveitamento) {
         if (pAproveitamento <= 0)
-            throw new IllegalArgumentException("Aproveitamento do produto invalido");
+            throw new IllegalArgumentException("Aproveitamento do produto inv·lido");
         aproveitamento = pAproveitamento;
     }
 
@@ -75,7 +75,7 @@ public class Produto implements Comparable<Produto> {
 
     public void setQuantidadeEstoque(BigDecimal pQuantidadeEstoque) {
         if (pQuantidadeEstoque != null && pQuantidadeEstoque.compareTo(BigDecimal.ZERO) <= 0)
-            throw new IllegalArgumentException("Quantidade do estoque do produto invalido");
+            throw new IllegalArgumentException("Quantidade do estoque do produto inv·lido");
         quantidadeEstoque = pQuantidadeEstoque;
     }
 
@@ -85,7 +85,7 @@ public class Produto implements Comparable<Produto> {
 
     public void setCusto(BigDecimal pCusto) {
         if (pCusto != null && pCusto.compareTo(BigDecimal.ZERO) <= 0)
-            throw new IllegalArgumentException("Custo do produto invalido");
+            throw new IllegalArgumentException("Custo do produto inv·lido");
         custo = pCusto;
     }
 
@@ -95,7 +95,7 @@ public class Produto implements Comparable<Produto> {
 
     public void setUnidadeMedida(UnidadeMedida pUnidadeMedida) {
         if (pUnidadeMedida == null)
-            throw new IllegalArgumentException("Unidade de medida do produto inv√°lido");
+            throw new IllegalArgumentException("Unidade de medida do produto inv·lido");
         unidadeMedida = pUnidadeMedida;
     }
 
@@ -144,7 +144,7 @@ public class Produto implements Comparable<Produto> {
 
     @Override
     public int compareTo(Produto pArg0) {
-        return Long.compare(id, pArg0.id);
+    	return id = pArg0.id;
     }
 
     public static class NomeComparator implements Comparator<Produto> {

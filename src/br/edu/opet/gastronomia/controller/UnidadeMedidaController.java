@@ -6,11 +6,9 @@ import br.edu.opet.gastronomia.dao.UnidadeMedidaDao;
 import br.edu.opet.gastronomia.dto.UnidadeMedidaDto;
 import br.edu.opet.gastronomia.model.UnidadeMedida;
 
-public class UnidadeMedidaController
-{
+public class UnidadeMedidaController {
     // Método para criar uma unidade de medida
-    public UnidadeMedidaDto cadastrar(UnidadeMedida pUnidadeMedida)
-    {
+    public UnidadeMedidaDto cadastrar(UnidadeMedida pUnidadeMedida) {
         if (pUnidadeMedida == null)
             return new UnidadeMedidaDto(false, "Tentativa de inserir um unidade de medida nulo");
 
@@ -32,8 +30,7 @@ public class UnidadeMedidaController
     }
 
     // Método para recuperar uma unidade de medida
-    public UnidadeMedidaDto recuperar(int pId)
-    {
+    public UnidadeMedidaDto recuperar(int pId) {
         // Lendo o objeto
         UnidadeMedidaDao tDao = new UnidadeMedidaDao();
         UnidadeMedida tUnidadeMedida = tDao.recovery(pId);
@@ -47,8 +44,7 @@ public class UnidadeMedidaController
     }
 
     // Método para atualizar uma unidade de medida
-    public UnidadeMedidaDto atualizar(UnidadeMedida pUnidadeMedida)
-    {
+    public UnidadeMedidaDto atualizar(UnidadeMedida pUnidadeMedida) {
         if (pUnidadeMedida == null)
             return new UnidadeMedidaDto(false, "Tentativa de atualizar uma unidade de medida nulo");
 
@@ -65,8 +61,7 @@ public class UnidadeMedidaController
     }
 
     // Método para deletar uma unidade de medida
-    public UnidadeMedidaDto remover(int pId)
-    {
+    public UnidadeMedidaDto remover(int pId) {
         // Removendo o unidadeMedida e verificando se houve erro de remoção
         UnidadeMedidaDao tDao = new UnidadeMedidaDao();
         if (! tDao.delete(pId))
@@ -77,8 +72,7 @@ public class UnidadeMedidaController
     }
 
     // Método para pesquisar todos as unidades de medida
-    public UnidadeMedidaDto pesquisar()
-    {
+    public UnidadeMedidaDto pesquisar() {
         // Obtendo a lista de unidadeMedidas
         UnidadeMedidaDao tDao = new UnidadeMedidaDao();
         List<UnidadeMedida> tLista = tDao.search();
@@ -92,8 +86,7 @@ public class UnidadeMedidaController
     }
 
     // Método para pesquisar por descrição todos as unidades de medida
-    public UnidadeMedidaDto pesquisarPorDescricao(String pDescricao)
-    {
+    public UnidadeMedidaDto pesquisarPorDescricao(String pDescricao) {
         // Caso o nome de pesquisa seja nulo, retorna a lista geral
         if (pDescricao == null)
             return pesquisar();

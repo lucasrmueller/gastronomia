@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import br.edu.opet.gastronomia.jdbc.Conexao;
 import br.edu.opet.gastronomia.model.Categoria;
 import br.edu.opet.gastronomia.util.ExceptionUtil;
@@ -45,7 +44,7 @@ public class CategoriaDao {
            // Copiando o objeto para o retorno
            tObjeto = pCategoria;
 
-           // Recuperando o cÃ³digo gerado pelo banco de dados
+           // Recuperando o código gerado pelo banco de dados
            ResultSet tRsChave = tComandoJDBC.getGeneratedKeys();
            tRsChave.next();
            tObjeto.setId(tRsChave.getInt(1));
@@ -151,7 +150,7 @@ public class CategoriaDao {
             tComandoJDBC.setString(i++, pCategoria.getDescricao());
             tComandoJDBC.setInt(i++, pCategoria.getId());
 
-            // Executando o comando de regravação e salvando o nÃºmero de registros alterados
+            // Executando o comando de regravação e salvando o número de registros alterados
             int tQtdeReg = tComandoJDBC.executeUpdate();
 
             // Verificando se um registro foi alterado
@@ -190,15 +189,15 @@ public class CategoriaDao {
 
             // Verificando se um registro foi removido
             if (tQtdeReg == 1) {
-                // Indicado que a remoï¿½ï¿½o foi efetuado com sucesso
+                // Indicado que a remoção foi efetuado com sucesso
                 return true;
             }
         }
         catch (SQLException tExcept) {
-            ExceptionUtil.mostrarErro(tExcept, "Erro no Método de remoï¿½ï¿½o do objeto");
+            ExceptionUtil.mostrarErro(tExcept, "Erro no Método de remoção do objeto");
         }
 
-        // Se chegou nesse ponto a remoï¿½ï¿½o nÃ£o foi efetuada
+        // Se chegou nesse ponto a remoção não foi efetuada
         return false;
     }
 
@@ -239,7 +238,7 @@ public class CategoriaDao {
 
     // Metodo para pesquisar por descricao todos os objetos da base de dados (SELECT WHERE)
     public List<Categoria> searchByDescricao(String pDescricao) {
-        // Acertando o critï¿½rio de pesquisa
+        // Acertando o critério de pesquisa
         String tDescricaoPesquisa = "%" + pDescricao + "%";
 
         // Criando a lista de objetos vazia

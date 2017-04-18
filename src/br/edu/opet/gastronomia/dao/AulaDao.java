@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import br.edu.opet.gastronomia.jdbc.Conexao;
 import br.edu.opet.gastronomia.model.Aula;
 import br.edu.opet.gastronomia.util.ExceptionUtil;
@@ -66,7 +65,7 @@ public class AulaDao {
     }
 
     // Método para recuperar um objeto da base de dados (SELECT WHERE PRIMARY KEY)
-    public Aula recovery(long pIsbn) {
+    public Aula recovery(long pAula) {
 
         // Definindo o objeto de retorno
         Aula tObjeto = null;
@@ -79,7 +78,7 @@ public class AulaDao {
             PreparedStatement tComandoJDBC = sConexao.prepareStatement(tComandoSQL);
 
             // Colocando o parâmetro recebido no comando JDBC
-            tComandoJDBC.setLong(1, pIsbn);
+            tComandoJDBC.setLong(1, pAula);
 
             // Executando o comando e salvando o ResultSet para processar
             ResultSet tResultSet = tComandoJDBC.executeQuery();
@@ -143,7 +142,7 @@ public class AulaDao {
     }
 
     // Método para remover um objeto na base de dados (DELETE)
-    public boolean delete(long pIsbn) {
+    public boolean delete(long pAula) {
         try {
             // Criando o comando SQL e o comando JDBC
             String tComandoSQL = "DELETE " + sTabela +
@@ -151,7 +150,7 @@ public class AulaDao {
             PreparedStatement tComandoJDBC = sConexao.prepareStatement(tComandoSQL);
 
             // Colocando o parâmetro recebido no comando JDBC
-            tComandoJDBC.setLong(1, pIsbn);
+            tComandoJDBC.setLong(1, pAula);
 
             // Executando o comando de remoção e salvando o número de registros removidos
             int tQtdeReg = tComandoJDBC.executeUpdate();
@@ -210,9 +209,9 @@ public class AulaDao {
     }
 
     // Método para pesquisar por descrição todos os objetos da base de dados (SELECT WHERE)
-    public List<Aula> searchByDataAula(String pDataAula) {
+    public List<Aula> searchByData(String pData) {
         // Acertando o critério de pesquisa
-        String tDescricaoPesquisa = "%" + pDataAula + "%";
+        String tDescricaoPesquisa = "%" + pData + "%";
 
         // Criando a lista de objetos vazia
         List<Aula> tLista = new ArrayList<>();

@@ -70,7 +70,7 @@ public class ProdutoDao {
     }
 
     // Metodo para recuperar um objeto da base de dados (SELECT WHERE PRIMARY KEY)
-    public Produto recovery(long pProduto) {
+    public Produto recovery(long pProduto){
         // Definindo o objeto de retorno
         Produto tObjeto = null;
 
@@ -99,14 +99,14 @@ public class ProdutoDao {
             tComandoJDBC.close();
         }
         catch (SQLException tExcept) {
-            ExceptionUtil.mostrarErro(tExcept, "Erro no mÃ©todo de recuperação do objeto");
+            ExceptionUtil.mostrarErro(tExcept, "Erro no método de recuperação do objeto");
         }
 
         // Retornando o objeto
         return tObjeto;
     }
 
-    // MÃ©todo para atualizar um objeto na base de dados (UPDATE)
+    // Método para atualizar um objeto na base de dados (UPDATE)
     public Produto update(Produto pProduto) {
         // Definindo o objeto de retorno
         Produto tObjeto = null;
@@ -142,7 +142,7 @@ public class ProdutoDao {
             tComandoJDBC.close();
         }
         catch (SQLException tExcept) {
-            ExceptionUtil.mostrarErro(tExcept, "Erro no mÃ©todo de atualização do objeto");
+            ExceptionUtil.mostrarErro(tExcept, "Erro no método de atualização do objeto");
         }
 
         // Retornando o objeto
@@ -173,7 +173,7 @@ public class ProdutoDao {
             }
         }
         catch (SQLException tExcept) {
-            ExceptionUtil.mostrarErro(tExcept, "Erro no mÃ©todo de remoção do objeto");
+            ExceptionUtil.mostrarErro(tExcept, "Erro no método de remoção do objeto");
         }
 
         // Se chegou nesse ponto a remocao nao foi efetuada
@@ -209,7 +209,7 @@ public class ProdutoDao {
             tComandoJDBC.close();
         }
         catch (SQLException tExcept) {
-            ExceptionUtil.mostrarErro(tExcept, "Erro no mÃ©todo de recuperação da lista de objetos");
+            ExceptionUtil.mostrarErro(tExcept, "Erro no método de recuperação da lista de objetos");
         }
 
         // Retornando a lista de objetos
@@ -253,7 +253,7 @@ public class ProdutoDao {
             tComandoJDBC.close();
         }
         catch (SQLException tExcept) {
-            ExceptionUtil.mostrarErro(tExcept, "Erro no mÃ©todo da pesquisa por nome dos objetos");
+            ExceptionUtil.mostrarErro(tExcept, "Erro no método da pesquisa por nome dos objetos");
         }
 
         // Retornando a lista de objetos

@@ -90,8 +90,7 @@ public class UnidadeMedida implements Comparable<UnidadeMedida> {
 
     public static class DescricaoComparator implements Comparator<UnidadeMedida> {
         @Override
-        public int compare(UnidadeMedida pArg1, UnidadeMedida pArg2)
-        {
+        public int compare(UnidadeMedida pArg1, UnidadeMedida pArg2) {
             return pArg1.descricao.compareTo(pArg2.descricao);
         }
     }

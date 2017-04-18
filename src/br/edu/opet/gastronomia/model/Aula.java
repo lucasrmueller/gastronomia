@@ -3,21 +3,18 @@ package br.edu.opet.gastronomia.model;
 import java.time.LocalDate;
 import java.util.Comparator;
 
-public class Aula implements Comparable<Aula>
-{
+public class Aula implements Comparable<Aula> {
 
     private int       id;
     private LocalDate data;
     private String    descricao;
 
-    public Aula()
-    {
+    public Aula() {
         super();
     }
 
 
-    public Aula(int pId, LocalDate pData, String pDescricao)
-    {
+    public Aula(int pId, LocalDate pData, String pDescricao) {
         super();
         id = pId;
         data = pData;
@@ -25,39 +22,38 @@ public class Aula implements Comparable<Aula>
     }
 
 
-    public int getId()
-    {
+    public int getId() {
         return id;
     }
 
-    public void setId(int pId)
-    {
+    public void setId(int pId) {
+    	 if (pId <= 0)
+             throw new IllegalArgumentException("Id da aula inválido");
         id = pId;
     }
 
-    public LocalDate getData()
-    {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(LocalDate pData)
-    {
+    public void setData(LocalDate pData) {
+    	if (pData == null) //TODO - LocalDate = vazio e formato|| pData.isEmpty() || pData.length() > 9)
+            throw new IllegalArgumentException("Data inválida");
         data = pData;
     }
 
-    public String getDescricao()
-    {
+    public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String pDescricao)
-    {
+    public void setDescricao(String pDescricao) {
+    	if (pDescricao == null || pDescricao.isEmpty() || pDescricao.length() > 50)
+            throw new IllegalArgumentException("Descrição da aula inválida");
         descricao = pDescricao;
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         StringBuilder tBuilder = new StringBuilder();
         tBuilder.append(" [");
         tBuilder.append(id);
@@ -70,8 +66,7 @@ public class Aula implements Comparable<Aula>
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         final int prime = 31;
         int result = 1;
         result = prime * result + id;
@@ -79,8 +74,7 @@ public class Aula implements Comparable<Aula>
     }
 
     @Override
-    public boolean equals(Object obj)
-    {
+    public boolean equals(Object obj) {
         if (this == obj)
             return true;
         if (obj == null)
@@ -94,17 +88,22 @@ public class Aula implements Comparable<Aula>
     }
 
     @Override
-    public int compareTo(Aula pArg0)
-    {
-        return Long.compare(id, pArg0.id);
+    public int compareTo(Aula pArg0) {
+    	return id = pArg0.id;
     }
 
-    public static class DataComparator implements Comparator<Aula>
-    {
+    public static class DataComparator implements Comparator<Aula> {
         @Override
-        public int compare(Aula pArg1, Aula pArg2)
-        {
+        public int compare(Aula pArg1, Aula pArg2) {
             return pArg1.data.compareTo(pArg2.data);
+        }
+
+    }
+    
+    public static class DescricaoComparator implements Comparator<Aula> {
+        @Override
+        public int compare(Aula pArg1, Aula pArg2) {
+            return pArg1.descricao.compareTo(pArg2.descricao);
         }
 
     }

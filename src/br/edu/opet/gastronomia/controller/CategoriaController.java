@@ -6,11 +6,9 @@ import br.edu.opet.gastronomia.dao.CategoriaDao;
 import br.edu.opet.gastronomia.dto.CategoriaDto;
 import br.edu.opet.gastronomia.model.Categoria;
 
-public class CategoriaController
-{
+public class CategoriaController {
     // Método para criar uma categoria
-    public static CategoriaDto cadastrar(Categoria pCategoria)
-    {
+    public static CategoriaDto cadastrar(Categoria pCategoria) {
         if (pCategoria == null)
             return new CategoriaDto(false, "Tentativa de inserir um categoria nulo");
 
@@ -32,8 +30,7 @@ public class CategoriaController
     }
 
     // Método para recuperar uma categoria
-    public static CategoriaDto recuperar(int pId)
-    {
+    public static CategoriaDto recuperar(int pId) {
         // Lendo o objeto
         CategoriaDao tDao = new CategoriaDao();
         Categoria tCategoria = tDao.recovery(pId);
@@ -47,8 +44,7 @@ public class CategoriaController
     }
 
     // Método para atualizar uma categoria
-    public static CategoriaDto atualizar(Categoria pCategoria)
-    {
+    public static CategoriaDto atualizar(Categoria pCategoria) {
         if (pCategoria == null)
             return new CategoriaDto(false, "Tentativa de atualizar uma categoria nulo");
 
@@ -70,8 +66,7 @@ public class CategoriaController
     }
 
     // Método para deletar uma categoria
-    public static CategoriaDto remover(int pId)
-    {
+    public static CategoriaDto remover(int pId) {
         // Removendo o categoria e verificando se houve erro de remoção
         CategoriaDao tDao = new CategoriaDao();
         if (! tDao.delete(pId))
@@ -82,8 +77,7 @@ public class CategoriaController
     }
 
     // Método para pesquisar todos as categorias
-    public static CategoriaDto pesquisar()
-    {
+    public static CategoriaDto pesquisar() {
         // Obtendo a lista de categorias
         CategoriaDao tDao = new CategoriaDao();
         List<Categoria> tLista = tDao.search();
@@ -97,8 +91,7 @@ public class CategoriaController
     }
 
     // Método para pesquisar por descrição todos as categorias
-    public static CategoriaDto pesquisarPorDescricao(String pDescricao)
-    {
+    public static CategoriaDto pesquisarPorDescricao(String pDescricao) {
         // Caso o nome de pesquisa seja nulo, retorna a lista geral
         if (pDescricao == null)
             return pesquisar();

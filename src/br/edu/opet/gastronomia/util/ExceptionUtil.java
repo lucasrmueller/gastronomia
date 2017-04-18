@@ -3,16 +3,15 @@ package br.edu.opet.gastronomia.util;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ExceptionUtil
-{
-    public static void mostrarErro(Exception pExcept, String pMsg)
-    {
-        System.out.println();
+public class ExceptionUtil {
+    public static void mostrarErro(Exception pExcept, String pMsg) {
+        
+    	System.out.println();
         System.out.println(pMsg);
-        System.out.println("ExceÃ§Ã£o... : " + pExcept.getClass().getName());
+        System.out.println("Exceção... : " + pExcept.getClass().getName());
         System.out.println("Mensagem.. : " + pExcept.getMessage());
-        if (pExcept instanceof SQLException)
-        {
+        
+        if (pExcept instanceof SQLException) {
             SQLException tExcept = (SQLException) pExcept;
             System.out.println("SQLState.. :" + tExcept.getSQLState());
             System.out.println("Error Code :" + tExcept.getErrorCode());
@@ -20,12 +19,13 @@ public class ExceptionUtil
             DriverManager.println("Error Code :" + tExcept.getErrorCode());
         }
         Throwable tCausa = pExcept.getCause();
-        while (tCausa != null)
-        {
+        
+        while (tCausa != null) {
             System.out.println("Causa..... : " + tCausa.getMessage());
             tCausa = tCausa.getCause();
         }
-        System.out.println("Pilha de execuÃ§Ã£o");
+        
+        System.out.println("Pilha de execução");
         pExcept.printStackTrace(System.out);
     }
 }
