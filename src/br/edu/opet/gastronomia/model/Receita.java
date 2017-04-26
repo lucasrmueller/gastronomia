@@ -3,16 +3,16 @@ package br.edu.opet.gastronomia.model;
 import java.util.Comparator;
 
 public class Receita implements Comparable<Receita> {
-		private int		id;
-		private String	nome;
-		private String	categoria;
-		private String	classificacao;
+		private int			id;
+		private String		nome;
+		private Categoria	categoria;
+		private String		classificacao;
 		
 		public Receita() {
 			super();
 		}
 
-		public Receita(int pId, String pNome, String pCategoria, String pClassificacao) {
+		public Receita(int pId, String pNome, Categoria pCategoria, String pClassificacao) {
 			super();
 			id = pId;
 			nome = pNome;
@@ -36,11 +36,11 @@ public class Receita implements Comparable<Receita> {
 			nome = pNome;
 		}
 
-		public String getCategoria() {
+		public Categoria getCategoria() {
 			return categoria;
 		}
 
-		public void setCategoria(String pCategoria) {
+		public void setCategoria(Categoria pCategoria) {
 			categoria = pCategoria;
 		}
 

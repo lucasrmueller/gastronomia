@@ -102,6 +102,43 @@ public class ReceitaDao {
         // Retornando o objeto
         return tObjeto;
     }
+    
+ // Método para recuperar um objeto da base de dados (SELECT WHERE PRIMARY KEY)
+    public Receita recoveryByNome(String pReceita) {
+        // Definindo o objeto de retorno
+        Receita tObjeto = null;
+
+        try {
+            // Criando o comando SQL e o comando JDBC
+            String tComandoSQL = "SELECT " + sCampos4 +
+                                 " FROM " + sTabela2 +
+                                 " WHERE UPPER(DESCRICAO) = UPPER(?)";
+            PreparedStatement tComandoJDBC = sConexao.prepareStatement(tComandoSQL);
+
+            // Colocando o parametro recebido no comando JDBC
+            tComandoJDBC.setString(1, pReceita);
+
+            // Executando o comando e salvando o ResultSet para processar
+            ResultSet tResultSet = tComandoJDBC.executeQuery();
+
+            // Verificando se um registro foi lido
+            if (tResultSet.next()) {
+                // Salvando o objeto para retornar depois
+                tObjeto = carregarObjeto(tResultSet);
+            }
+
+            // Liberando os recursos JDBC
+            tResultSet.close();
+            tComandoJDBC.close();
+        }
+        catch (SQLException tExcept) {
+            ExceptionUtil.mostrarErro(tExcept, "Erro no método de recuperacao do objeto");
+        }
+
+        // Retornando o objeto
+        return tObjeto;
+    }
+
 
     // Método para atualizar um objeto na base de dados (UPDATE)
     public Receita update(Receita pReceita) {
@@ -120,7 +157,7 @@ public class ReceitaDao {
             tComandoJDBC.setInt(i++, pReceita.getId());
             tComandoJDBC.setString(i++, pReceita.getNome());
             tComandoJDBC.setString(i++, pReceita.getClassificacao());
-            //TODO tComandoJDBC.setInt(i++, pReceita.getCategoria().getId());
+            tComandoJDBC.setInt(i++, pReceita.getCategoria().getId());
             tComandoJDBC.setInt(i++, pReceita.getId());
 
             // Executando o comando de regravacao e salvando o numero de registros alterados
@@ -267,7 +304,7 @@ public class ReceitaDao {
         tReceita.setId(tResultSet.getInt("ID"));
         tReceita.setNome(tResultSet.getString("NOME"));
         tReceita.setNome(tResultSet.getString("CLASSIFICACAO"));
-        //TODO tReceita.setCategoria(tCategoria);
+        tReceita.setCategoria(tCategoria);
 
         // Retornando o objeto criado
         return tReceita;

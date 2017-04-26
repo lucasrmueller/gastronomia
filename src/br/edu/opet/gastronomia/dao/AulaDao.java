@@ -100,6 +100,42 @@ public class AulaDao {
         // Retornando o objeto
         return tObjeto;
     }
+    
+ // Método para recuperar um objeto da base de dados (SELECT WHERE PRIMARY KEY)
+    public Aula recoveryByDescricao(String pDescricao) {
+        // Definindo o objeto de retorno
+        Aula tObjeto = null;
+
+        try {
+            // Criando o comando SQL e o comando JDBC
+            String tComandoSQL = "SELECT " + sCampos1 +
+                                 " FROM " + sTabela +
+                                 " WHERE UPPER(DESCRICAO) = UPPER(?)";
+            PreparedStatement tComandoJDBC = sConexao.prepareStatement(tComandoSQL);
+
+            // Colocando o parametro recebido no comando JDBC
+            tComandoJDBC.setString(1, pDescricao);
+
+            // Executando o comando e salvando o ResultSet para processar
+            ResultSet tResultSet = tComandoJDBC.executeQuery();
+
+            // Verificando se um registro foi lido
+            if (tResultSet.next()) {
+                // Salvando o objeto para retornar depois
+                tObjeto = carregarObjeto(tResultSet);
+            }
+
+            // Liberando os recursos JDBC
+            tResultSet.close();
+            tComandoJDBC.close();
+        }
+        catch (SQLException tExcept) {
+            ExceptionUtil.mostrarErro(tExcept, "Erro no método de recuperacao do objeto");
+        }
+
+        // Retornando o objeto
+        return tObjeto;
+    }
 
     // Método para atualizar um objeto na base de dados (UPDATE)
     public Aula update(Aula pAula) {

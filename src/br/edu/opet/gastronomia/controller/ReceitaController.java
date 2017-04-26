@@ -15,7 +15,7 @@ public class ReceitaController {
         // Chamando a camada de persistência
         ReceitaDao tDao = new ReceitaDao();
 
-        Receita tReceita = tDao.recoveryByDescricao(pReceita.getDescricao());
+        Receita tReceita = tDao.recoveryByNome(pReceita.getNome());
         if (tReceita != null)
             return new ReceitaDto(false, "Já existe receita com essa descrição");
 
@@ -51,7 +51,7 @@ public class ReceitaController {
         // Chamando a camada de persistência
         ReceitaDao tDao = new ReceitaDao();
 
-        Receita tReceita = tDao.recoveryByDescricao(pReceita.getDescricao());
+        Receita tReceita = tDao.recoveryByNome(pReceita.getNome());
         if (tReceita != null)
             return new ReceitaDto(false, "Já existe receita com essa descrição");
 
@@ -98,7 +98,7 @@ public class ReceitaController {
 
         // Obtendo a lista de receitas
         ReceitaDao tDao = new ReceitaDao();
-        List<Receita> tLista = tDao.searchByDescricao(pDescricao);
+        List<Receita> tLista = tDao.searchByNome(pDescricao);
 
         // Verificando se a lista está vazia
         if (tLista.isEmpty())

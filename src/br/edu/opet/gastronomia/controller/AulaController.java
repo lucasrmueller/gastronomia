@@ -105,7 +105,7 @@ public class AulaController
 
         // Obtendo a lista de aulas
         AulaDao tDao = new AulaDao();
-        List<Aula> tLista = tDao.searchByDescricao(pDescricao);
+        List<Aula> tLista = tDao.searchByData(pDescricao);
 
         // Verificando se a lista está vazia
         if (tLista.isEmpty())
