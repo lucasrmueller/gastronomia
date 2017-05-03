@@ -12,8 +12,7 @@ import java.util.Properties;
 
 import br.edu.opet.gastronomia.util.ExceptionUtil;
 
-public class Conexao
-{
+public class Conexao {
     // Atributos estáticos
     private static Connection sConexao;
 
