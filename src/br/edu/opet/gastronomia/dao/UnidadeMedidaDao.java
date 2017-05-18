@@ -31,11 +31,12 @@ public class UnidadeMedidaDao {
             // Criando o comando SQL e o comando JDBC
             String tComandoSQL = "INSERT INTO " + sTabela +
                                  " (" + sCampos1 + ") " +
-                                 " VALUES (" + sCampos3.replaceFirst("\\?", "UNIDADE_MEDIDA_SEQ.NEXTVAL") + ")";
-            PreparedStatement tComandoJDBC = sConexao.prepareStatement(tComandoSQL, new String [] {"ID"});
+                                 " VALUES (" + sCampos3+ ")";
+            PreparedStatement tComandoJDBC = sConexao.prepareStatement(tComandoSQL, new String [] {"ID,SIMBOLO,DESCRICAO"});
 
             // Colocando os parametros recebidos no comando JDBC
             int i = 1;
+            tComandoJDBC.setLong(i++, pUnidadeMedida.getId());
             tComandoJDBC.setString(i++, pUnidadeMedida.getSimbolo());
             tComandoJDBC.setString(i++, pUnidadeMedida.getDescricao());
 
@@ -176,7 +177,7 @@ public class UnidadeMedidaDao {
     public boolean delete(long pUnidadeMedida) {
         try {
             // Criando o comando SQL e o comando JDBC
-            String tComandoSQL = "DELETE " + sTabela +
+            String tComandoSQL = "DELETE FROM " + sTabela +
                                  " WHERE " + sPrimaryKey;
             PreparedStatement tComandoJDBC = sConexao.prepareStatement(tComandoSQL);
 

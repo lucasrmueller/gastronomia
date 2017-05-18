@@ -8,7 +8,7 @@ public class UnidadeMedida implements Comparable<UnidadeMedida> {
     private String descricao;
 
     public UnidadeMedida() {
-        super();
+       
     }
 
     public UnidadeMedida(int pId, String pSimbolo, String pDescricao) {

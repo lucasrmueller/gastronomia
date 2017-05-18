@@ -1,5 +1,4 @@
 package br.edu.opet.gastronomia.model;
-
 import java.time.LocalDate;
 import java.util.Comparator;
 
