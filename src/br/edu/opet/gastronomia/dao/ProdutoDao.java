@@ -18,8 +18,8 @@ public class ProdutoDao {
     private static String sCampos1 = "ID, NOME, QUANTIDADE_CALORICA, APROVEITAMENTO, QUANTIDADE_ESTOQUE, CUSTO, ID_UNIDADE_MEDIDA";
     private static String sCampos2 = sCampos1.replaceAll(",", " = ?,") + " = ?";
     private static String sCampos3 = sCampos2.replaceAll("[A-Z_]+ =", "");
-    private static String sCampos4 = "PRODUTO.ID, NOME, QUANTIDADE_CALORICA, APROVEITAMENTO, QUANTIDADE_ESTOQUE, CUSTO, ID_UNIDADE_MEDIDA, SIMBOLO, DESCRICAO";
-    private static String sPrimaryKey = "PRODUTO.ID = ?";
+    private static String sCampos4 = "ID, NOME, QUANTIDADE_CALORICA, APROVEITAMENTO, QUANTIDADE_ESTOQUE, CUSTO, ID_UNIDADE_MEDIDA, SIMBOLO, DESCRICAO";
+    private static String sPrimaryKey = "ID = ?";
     private static String sOrdem = "ORDER BY UPPER(NOME)";
     private static String sAssociacoes = "PRODUTO.ID = UNIDADE_MEDIDA.ID";
 
@@ -35,11 +35,13 @@ public class ProdutoDao {
             // Criando o comando SQL e o comando JDBC
             String tComandoSQL = "INSERT INTO " + sTabela1 +
                                  " (" + sCampos1 + ") " +
-                                 " VALUES (" + sCampos3.replaceFirst("\\?", "PRODUTO_SEQ.NEXTVAL") + ")";
-            PreparedStatement tComandoJDBC = sConexao.prepareStatement(tComandoSQL, new String [] {"ID"});
+                                 " VALUES (" + sCampos3 + ")";
+            PreparedStatement tComandoJDBC = sConexao.prepareStatement(tComandoSQL, new String [] {"ID,NOME,QUANTIDADE_CALORICA,APROVEITAMENTO,QUANTIDADE_ESTOQUE,CUSTO,ID_UNIDADE_MEDIDA"});
 
             // Colocando os parametros recebidos no comando JDBC
             int i = 1;
+            
+            tComandoJDBC.setLong(i++, pProduto.getId());
             tComandoJDBC.setString(i++, pProduto.getNome());
             tComandoJDBC.setBigDecimal(i++, pProduto.getQuantidadeCalorica());
             tComandoJDBC.setInt(i++, pProduto.getAproveitamento());

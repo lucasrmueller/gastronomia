@@ -14,7 +14,6 @@ import br.edu.opet.gastronomia.model.UnidadeMedida;
 @SessionScoped
 public class UnidadeMedidaBean implements Serializable {
 
-
 	private static final long serialVersionUID = -5021009997032216320L;
 	
 	private UnidadeMedida pUnidadeMedida;
